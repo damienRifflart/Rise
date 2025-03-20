@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+:root {
+    --dark-green: #2E383D;
+    --light-green: #394646;
+    --light-salmon: #be94ad;
+    --text: #EDFCF4;
+    background-color: var(--light-green);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+}
