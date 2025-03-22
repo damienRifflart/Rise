@@ -1,10 +1,20 @@
-import { useEffect, useState } from 'react';
 import '../App.css'
+import { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar'
+import Artist from "../components/Artists"
 import { fetchResponse } from '../api';
 
+type Data = {
+  [key: string]: {
+    birth: number;
+    death: number;
+    movement: string;
+    famousPainting: string;
+  };
+}
+
 function App() {
-  const [parsedData, setParsedData] = useState(null);
+  const [parsedData, setParsedData] = useState<null | Data>(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,31 +33,11 @@ function App() {
     fetchData();
   }, []);
 
-  const exampleData = {
-    "Salvador Dali": {
-        "birth": 1904,
-        "death": 1989,
-        "movement": "Surrealism",
-        "famousPainting": "The Persistence of Memory"
-    },
-    "Vincent Van Gogh": {
-        "birth": 1853,
-        "death": 1890,
-        "movement": "Post-Impressionism",
-        "famousPainting": "Starry Night"
-    },
-    "Frida Kahlo": {
-        "birth": 1907,
-        "death": 1954,
-        "movement": "Magical Realism",
-        "famousPainting": "The Two Fridas"
-    }
-  }
 
   return (
     <>
       <NavBar />
-      <h1 className='text-white text-3xl'>Reco</h1>
+      {parsedData && <Artist data={parsedData} />}
     </>
   )
 }
