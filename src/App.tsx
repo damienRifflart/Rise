@@ -3,10 +3,11 @@ import Home from "./pages/Home";
 import Reco from "./pages/Reco";
 import Todo from "./pages/Todo";
 
+
 function App() {
   return (
     <Routes>
-      <Route path="/home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="/reco" element={<Reco />} />
       <Route path="/todo" element={<Todo />} />
     </Routes>

@@ -9,8 +9,8 @@ const NavBar: React.FC = () => {
             <ul className="flex w-screen justify-between bg-[var(--dark-green)] justify-between py-5 px-20">
                 <li className="hover:text-accent transition">
                     <button
-                        className={`flex items-center gap-2.5 ${location.pathname === "/home" ? "text-[var(--light-salmon)]" : ""} cursor-pointer`}
-                        onClick={() => navigate('/home')}
+                        className={`flex items-center gap-2.5 ${location.pathname === "/" ? "text-[var(--light-salmon)]" : ""} cursor-pointer`}
+                        onClick={() => navigate('/')}
                     >
                         <i className="fa-solid fa-square-plus"></i>
                         <span className="text-4xl font-bold">Home</span>
